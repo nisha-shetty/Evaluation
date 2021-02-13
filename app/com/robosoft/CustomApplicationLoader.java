@@ -1,0 +1,23 @@
+package com.robosoft;
+
+import play.ApplicationLoader;
+import play.Logger;
+import play.inject.guice.GuiceApplicationBuilder;
+import play.inject.guice.GuiceApplicationLoader;
+
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
+
+public class CustomApplicationLoader extends GuiceApplicationLoader {
+
+    @Override
+    public GuiceApplicationBuilder builder(ApplicationLoader.Context context) {
+        Config extra = ConfigFactory.parseString("a = 1");
+        Logger.info("--------------CustomApplicationLoader---------");
+        return initialBuilder
+            .in(context.environment())
+            .loadConfig(extra.withFallback(context.initialConfig()))
+            .overrides(overrides(context));
+    }
+
+}

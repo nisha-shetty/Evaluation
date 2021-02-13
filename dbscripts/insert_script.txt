@@ -1,0 +1,82 @@
+INSERT INTO `tblfeature` (`fldFeatureID`, `fldFeatureName`, `fldOrder`, `fldIsDeleted`)VALUES 
+ (2, 'role 1', '8', '0'),
+ (3, 'role 2', '7', '0'),
+ (4, 'role 3', '6', '0'),
+ (5, 'role 4', '9', '0'),
+ (6, 'role 5', '9', '0'),
+ (7, 'all ', '8', '0');
+ 
+ 
+INSERT INTO  `tblappsettings` (`fldid` ,`fldcode` ,`fldvalue`)
+VALUES (NULL ,  'IMAGE_DIR_PATH',  'images'),
+(NULL ,  'FILE_SERVER_ROOT_PATH', '/opt/doc_root'),
+(NULL ,  'FILE_SERVER_ROOT_PATH_DEV',  'F:doc_root'),
+(NULL ,  'DOCUMENT_DIR_PATH',  'document'),
+(NULL ,  'PUSH_IMAGE_DIR_PATH',  'push');
+
+
+#Base url need to  be changed
+INSERT INTO `tblappsettings` (`fldid`, `fldcode`, `fldvalue`) VALUES 
+(NULL, 'BASE_URL', 'http://localhost:9000'),
+(NULL, 'BASE_URL', 'http://10.10.41.84:9011'),
+(NULL, 'PUSH_IMAGE_END_POINT', '/api/v1/push/image/');
+
+
+INSERT INTO  `tblresponsemessages` (`fldid` ,`fldkey` ,`fldcode` ,`fldmessage` ,`fldislazy`)VALUES 
+(NULL ,  '-7002',  'SAVE_PUSH_NOTIFICATION_ERROR',  'Error in saving push notification.Please try again.',  '0'),
+(NULL ,  '-7000',  'DELETE_PUSH_NOTIFICATION_ERROR',  'Error in deleting push notification.Please try again.', '0'),
+(NULL ,  '-7003',  'SEND_PUSH_NOTIFICATION_ERROR',  'Notification has not been sent successfully.',  '0');
+ 
+ INSERT INTO `tblappsettings` (`fldid`, `fldcode`, `fldvalue`) VALUES (NULL, 'FILE_SERVER_ROOT_PATH', '/opt/pdf');
+ 
+ INSERT INTO `tblappsettings` (`fldid`, `fldcode`, `fldvalue`) VALUES (NULL, 'FILE_SERVER_ROOT_PATH_DEV', '/opt/Builds/pdf');
+ 
+ INSERT INTO `tblresponsemessages` (`fldid`, `fldkey`, `fldcode`, `fldmessage`, `fldislazy`) VALUES (NULL, '-5003', 'PDF_EXIST', 'pdf exist', '0');
+ 
+ 
+ INSERT INTO  `tblappsettings` (
+`fldid` ,
+`fldcode` ,
+`fldvalue`
+)
+VALUES (
+NULL ,  'MAXIMUM_FAILURE_LOGIN_ATTEMPT_COUNT','5'),
+(NULL ,  'AES_PADDING_KEY',  'AES/CBC/PKCS5Padding'),
+(NULL ,  'AES_ENCRYPTION_KEY', 'aar6tzij8o1snaar'),
+(NULL ,  'AES_IVECTOR_KEY',  '0123456789ABCDEF'),
+(NULL ,  'ENABLE_ENC',  '1');
+
+
+INSERT INTO  `tblresponsemessages` (  `fldid` ,  `fldkey` ,  `fldcode` ,  `fldmessage` ,  `fldislazy` ) 
+VALUES (
+NULL ,  '-103',  'SOMETHING_WENT_WRONG',  'Something went wrong',  '0'
+);
+
+
+INSERT INTO  `tblresponsemessages` (
+`fldid` ,
+`fldkey` ,
+`fldcode` ,
+`fldmessage` ,
+`fldislazy`
+)
+VALUES (
+NULL ,  '-6012',  'PASSWORD_PATTERN_MISMATCH',  'Password must contain atleast one special character, uppercase letter and lowercase letter.',  '0'
+);
+ INSERT INTO  `tblappsettings` (
+`fldid` ,
+`fldcode` ,
+`fldvalue`
+)
+VALUES (
+NULL ,  'SESSION_TIMEOUT_IN_MINS',  '20'
+);
+
+INSERT INTO  `tblappsettings` (
+`fldid` ,
+`fldcode` ,
+`fldvalue`
+)
+VALUES (
+NULL ,  'SESSION_CLEANER_INTERVAL_IN_MINS',  '15'
+);
